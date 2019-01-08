@@ -37,7 +37,7 @@ public class ClientesController {
 
 	@GetMapping("/{id}")
 	public ClienteBean leer(@PathVariable("id") String id) {
-		log.info(">>> api/v1/clienteunico/clientes buscando clientes");
+		log.info(">>> api/v1/clientes buscando clientes");
 		
 		return clientesService.consultarCliente(id);
 	}
@@ -45,7 +45,7 @@ public class ClientesController {
 	@PostMapping
 	@ResponseStatus(CREATED)
 	public ClienteBean crear(@RequestBody ClienteBean cliente) {
-		log.info(">>> api/v1/clienteunico/clientes creando clientes");
+		log.info(">>> api/v1/clientes creando clientes");
 		return clientesService.guardarCliente(cliente);
 	}
 
@@ -65,7 +65,7 @@ public class ClientesController {
 	@ResponseStatus(CREATED)
 	public ResumenCredito crearCredito(@PathVariable("id") String folioCliente, @RequestBody Credito credito) {
 		
-		log.info(">>> api/v1/clienteunico/clientes solicita credito");
+		log.info(">>> api/v1/clientes solicita credito");
 		
 		return clientesService.generarCredito(folioCliente, credito);
 
